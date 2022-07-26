@@ -13,6 +13,7 @@ If you find this repository useful or use this code in your research, please cit
     journal={arXiv preprint arXiv:xxxx.xxxxx}, 
 }
 ```
+![Setup and Aggregated Results](OSLS_fig.png)
 
 ## Requirements
 
