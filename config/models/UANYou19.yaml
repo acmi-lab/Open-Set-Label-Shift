@@ -1,0 +1,12 @@
+_target_: src.algorithm.UANYou19.UANYou19
+arch: ${arch}
+dataset: ${dataset}
+num_source_classes: ${num_source_classes}
+pred_save_path: ${output_dir}
+learning_rate: ${learning_rate}
+weight_decay: ${weight_decay}
+pretrained: ${pretrained}
+max_epochs: ${max_epochs}
+work_dir: ${work_dir}
+hash: ${logger.group}
+seed: ${seed}

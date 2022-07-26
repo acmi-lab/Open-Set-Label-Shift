@@ -1,0 +1,33 @@
+defaults:
+  - trainer: default.yaml
+  - datamodule: default.yaml
+  - models: default.yaml
+  - logger: wandb.yaml
+  - hydra: default.yaml
+  - _self_
+
+work_dir: ${hydra:runtime.cwd}
+data_dir: "/path/to/data/dir"
+log_dir: ${work_dir}/${log_loc}
+output_dir: ${work_dir}/outputs/
+pretrained_model_dir: "${work_dir}/pretrained_models/"
+
+# path to folder with data
+data_loc: data
+log_loc: logs
+
+# Additional dataset hyperparams
+seed: 42
+dataset: "CIFAR10"
+arch: "Resnet18"
+num_source_classes: 10
+fraction_ood_class: 0.1
+train_fraction: 0.8
+batch_size: 200
+
+# Additional model hyperparams
+learning_rate: 0.1
+weight_decay: 0.0005
+pretrained: False
+max_epochs: 200
+separate: False

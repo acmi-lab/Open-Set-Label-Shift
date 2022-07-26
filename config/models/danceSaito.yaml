@@ -1,0 +1,13 @@
+_target_: src.algorithm.DanceSaito.DanceSaito
+arch: ${arch}
+dataset: ${dataset}
+num_source_classes: ${num_source_classes}
+num_target_samples: 5000
+learning_rate: ${learning_rate}
+pred_save_path: ${output_dir}
+weight_decay: ${weight_decay}
+pretrained: ${pretrained}
+max_epochs: ${max_epochs}
+work_dir: ${work_dir}
+hash: ${logger.group}
+seed: ${seed}

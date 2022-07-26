@@ -1,0 +1,11 @@
+_target_: src.algorithm.trainKLayers.TrainKLayers
+arch: ${arch}
+dataset: ${dataset}
+num_source_classes: ${datamodule.num_source_classes}
+learning_rate: 0.1
+weight_decay: 0.0005
+pretrained: False
+max_epochs: 500
+work_dir: ${work_dir}
+hash: ${logger.group}
+seed: ${seed}

@@ -1,0 +1,13 @@
+_target_: src.algorithm.separate2Adapt.Separate2Adapt
+arch: ${arch}
+dataset: ${dataset}
+num_source_classes: ${num_source_classes}
+learning_rate: ${learning_rate}
+weight_decay: ${weight_decay}
+pred_save_path: ${output_dir}
+batch_size: ${batch_size}
+pretrained:  ${pretrained}
+max_epochs: ${max_epochs}
+work_dir: ${work_dir}
+hash: ${logger.group}
+seed: ${seed}

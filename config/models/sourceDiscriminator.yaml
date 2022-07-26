@@ -1,0 +1,12 @@
+_target_: src.algorithm.sourceDiscriminator.SourceDiscriminator
+arch: ${arch}
+dataset: ${dataset}
+num_source_classes: ${datamodule.num_source_classes}
+learning_rate: ${learning_rate}
+weight_decay: ${weight_decay}
+pretrained: ${pretrained}
+pred_save_path: ${output_dir}
+max_epochs: ${max_epochs}
+work_dir: ${work_dir}
+hash: ${logger.group}
+seed: ${seed}

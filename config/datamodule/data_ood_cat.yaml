@@ -1,0 +1,18 @@
+_target_: src.datamodule.DataModule
+data_dir: ${data_dir} 
+dataset: ${dataset}
+source_classes: [0,1,2,4,5,6,7,8,9]
+num_source_classes: 9
+# source_marginal: [0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1] 
+source_marginal_type: "Uniform" # "Dirichilet" or "Uniform" or "Manual"
+source_marginal: [1000]
+ood_class: [3]
+target_marginal_type: "Manual"
+target_marginal: [0.07, 0.08, 0.05, 0.03, 0.18, 0.07, 0.13, 0.14, 0.1, 0.15] 
+source_train_size: 22500
+target_train_size: 13888
+source_valid_size: 4500
+target_valid_size: 2777
+use_aug: True
+batch_size: 200
+model: ${arch}

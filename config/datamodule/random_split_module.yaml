@@ -1,0 +1,9 @@
+_target_: src.random_datamodule.RandomDataModule
+data_dir: ${data_dir} 
+dataset: ${dataset}
+num_source_classes: ${num_source_classes}
+fraction_ood_class: ${fraction_ood_class}
+train_fraction: ${train_fraction}
+use_aug: True
+batch_size: ${batch_size}
+seed: 42

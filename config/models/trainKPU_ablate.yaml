@@ -1,0 +1,12 @@
+_target_: src.algorithm.trainKPU_ablate.TrainKPU_ablate
+arch: ${arch}
+dataset: ${dataset}
+num_source_classes: ${datamodule.num_source_classes}
+learning_rate: ${learning_rate}
+weight_decay: ${weight_decay}
+pretrained:  ${pretrained}
+max_epochs: ${max_epochs}
+pred_save_path: ${output_dir}
+work_dir: ${work_dir}
+hash: ${logger.group}
+seed: ${seed}

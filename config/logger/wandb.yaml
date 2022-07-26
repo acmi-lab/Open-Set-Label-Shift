@@ -1,0 +1,7 @@
+_target_: pytorch_lightning.loggers.wandb.WandbLogger
+project: "open_set_classification"
+save_dir: "."
+offline: False
+log_model: False
+group: ""
+tags: null
