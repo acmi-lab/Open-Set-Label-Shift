@@ -1,16 +1,16 @@
 
 # Domain Adaptation under Open Set Label Shift
 
-This repository is the official implementation of [Domain Adaptation under Open Set Label Shift](). We also release implementation of relevant baselines for Open Set Domain Adaptation and alternative methods adapted from PU learning. 
+This repository is the official implementation of [Domain Adaptation under Open Set Label Shift](https://arxiv.org/abs/2207.13048). We also release implementation of relevant baselines for Open Set Domain Adaptation and alternative methods adapted from PU learning. 
 If you find this repository useful or use this code in your research, please cite the following paper: 
 
-> Garg, S., Balakrishnan, S., Lipton, Z. (2022). Domain Adaptation under Open Set Label Shift. arxiv preprint  arXiv:xxxx.xxxxx. 
+> Garg, S., Balakrishnan, S., Lipton, Z. (2022). Domain Adaptation under Open Set Label Shift. arxiv preprint  arXiv:2207.13048. 
 ```
 @article{garg2022OSLS,
     title={Domain Adaptation under Open Set Label Shift},
     author={Garg, Saurabh and Balakrishnan, Sivaraman and Lipton, Zachary},
     year={2022},
-    journal={arXiv preprint arXiv:xxxx.xxxxx}, 
+    journal={arXiv preprint arXiv:2207.13048}, 
 }
 ```
 ### Setup and Aggregated Results
@@ -57,4 +57,4 @@ are in `configs/models` folder. We use random datamodule `configs/datamodule/ran
 
 ## Questions?
 
-For more details, refer to the accompanying the paper: [Domain Adaptation under Open Set Label Shift](). If you have questions, please feel free to reach us at sgarg2@andrew.cmu.edu or open an issue.  
+For more details, refer to the accompanying the paper: [Domain Adaptation under Open Set Label Shift](https://arxiv.org/abs/2207.13048). If you have questions, please feel free to reach us at sgarg2@andrew.cmu.edu or open an issue.  
