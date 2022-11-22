@@ -27,7 +27,17 @@ conda create --file enviornment.yml
 
 ## Setup 
 
-For dataset setup, we CIFAR10, CIFAR100 from pytorch torchvision library.  For other datasets follow the details provided in the paper. 
+### Dataset Details 
+
+We use CIFAR10, CIFAR100 from pytorch torchvision library. For Newsgroups20, we use sklearn datasets. Hence, we do not need any manual setup for them. For other datasets, our repository includes the code to setup an OSLS problem after the datasets have been manually downloaded. To download these datasets follow the steps below: 
+
+- Entity30: We use BREEDs benchmark library provided [here](https://github.com/MadryLab/BREEDS-Benchmarks). This mainly involves: (i) installing the [robustness](https://github.com/MadryLab/robustness) library; (ii) downloading [Imagenet](https://www.image-net.org/download.php) dataset; and (iii) downloading the Imagenet heirarchy from [here](https://github.com/MadryLab/BREEDS-Benchmarks/tree/master/imagenet_class_hierarchy/modified). 
+- BreakHis: We use [BreakHis](https://web.inf.ufpr.br/vri/databases/breast-cancer-histopathological-database-breakhis/) dataset provided [here](https://www.kaggle.com/datasets/ambarish/breakhis). Use the following command to download the dataset with [Kaggle API](https://github.com/Kaggle/kaggle-api): `kaggle datasets download -d ambarish/breakhis && mkdir -p ./data/ && unzip breakhis.zip -d ./data/ && python dataset_cleaning/Breakhis_dataset.py ./data/BreaKHis_v1/` 
+- DermNet: We use [Dermnet NZ](http://www.dermnet.com/dermatology-pictures-skin-disease-pictures) dataset provided [here](https://www.kaggle.com/datasets/shubhamgoel27/dermnet). Use the following command to download the dataset with [Kaggle API](https://github.com/Kaggle/kaggle-api): `kaggle datasets download -d shubhamgoel27/dermnet/ && mkdir -p ./data/dermnet && unzip dermnet.zip -d ./data/dermnet/` 
+- Tabula Muris: Download the dataset following instructions from this [repository](https://github.com/snap-stanford/comet). In particular, use the script [here](https://github.com/snap-stanford/comet/tree/master/TM/filelists/tabula_muris) or simply run the following: `wget http://snap.stanford.edu/comet/data/tabula-muris-comet.zip && unzip tabula-muris-comet.zip`
+- UTKFace: We use [UTKFace](https://susanqq.github.io/UTKFace/) dataset. Use the following command to download and setup the dataset: `gdown 0BxYys69jI14kYVM3aVhKS1VhRUk && mkdir -p ./data/UTKDataset && tar -xvf UTKFace.tar.gz -C ./data/UTKDataset/ && python  ./dataset_cleaning/UTK_dataset.py ./data/UTKDataset/`
+
+### Models
 
 For pretrained models, download and store the following files in the folder `./pretrained_models/`: For CIFAR100 we use the pretrained models provided [here](https://drive.google.com/file/d/1huW-ChBVvKcx7t8HyDaWTQB5Li1Fht9x/view) and for entity30 we use the pretrained models provided [here](https://github.com/AndrewAtanov/simclr-pytorch). For newsgroups20, we use glove vectors from [here](hhttps://www.kaggle.com/datasets/danielwillgeorge/glove6b100dtxt).
 
