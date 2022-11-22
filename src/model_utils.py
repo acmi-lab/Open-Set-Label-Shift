@@ -176,7 +176,7 @@ def get_model(arch, dataset, num_classes, pretrained, learning_rate, weight_deca
 
         return net, optimizer
 
-    elif dataset.lower().startswith("breakhis") and arch=="Resnet50":
+    elif (dataset.lower().startswith("breakhis")  or dataset.lower().startswith("utkface")) and arch=="Resnet50":
         log.info(f"Using {arch} for {dataset} with {num_classes} classes")
 
         log.debug(f"Loading {pretrained} pretrained model")
@@ -432,7 +432,7 @@ def get_combined_model(arch, dataset, num_classes, pretrained, learning_rate, we
 
         return classifier, domain_discriminator, optimizer_classifier, optimizer_domain_discriminator
 
-    elif dataset.lower().startswith("breakhis") and arch=="Resnet50":
+    elif (dataset.lower().startswith("breakhis")  or dataset.lower().startswith("utkface")) and arch=="Resnet50":
         log.info(f"Using {arch} for {dataset} with {num_classes} classes")
 
         log.debug(f"Loading {pretrained} pretrained model")

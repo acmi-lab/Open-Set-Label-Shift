@@ -280,7 +280,31 @@ def get_combined_data(data_dir, dataset, transform=None, train_fraction = None )
         val_data = Entity30withIndices(test_data, val_idx)
 
         return train_data, val_data
+    
+    elif dataset.lower() == "utkface":
 
+        train_data = ImageFolder(root=f"{data_dir}/UTKDataset", transform=transform[0])
+        test_data = ImageFolder(root=f"{data_dir}/UTKDataset/", transform=transform[1])
+
+        targets = np.array(train_data.targets)
+        labels = get_labels(targets)
+        idx_per_class = []
+
+        for label in labels:
+            idx_i = np.where(targets == label)[0]
+            np.random.shuffle(idx_i)
+            idx_per_class.append(idx_i)
+        
+        train_idx = np.concatenate([idx_per_class[i][:int(len(idx_per_class[i])*train_fraction)] for i in range(len(labels))])
+        val_idx = np.concatenate([idx_per_class[i][int(len(idx_per_class[i])*train_fraction):] for i in range(len(labels))])
+
+        UTKwithIndices = dataset_with_indices(Subset)
+
+        train_data = UTKwithIndices(train_data, train_idx)
+        val_data = UTKwithIndices(test_data, val_idx)
+
+        return train_data, val_data
+    
     elif dataset.lower() == "rxrx1":
 
         data = RxRx1Dataset(download=False, root_dir=data_dir)
@@ -514,6 +538,7 @@ def get_preprocessing(dset: str, use_aug: bool = False, train: bool = False):
         return None
     elif dset.lower().startswith("dermnet") \
         or dset.lower().startswith("breakhis")\
+        or dset.lower().startswith("utkface")\
         or dset.lower().startswith("entity30"):
         mean=[0.485, 0.456, 0.406]
         std=[0.229, 0.224, 0.225]
@@ -552,7 +577,7 @@ def get_preprocessing(dset: str, use_aug: bool = False, train: bool = False):
                 transforms.Normalize(mean, std),
             ])
 
-    elif dset.lower().startswith("breakhis"):
+    elif dset.lower().startswith("breakhis") or dset.lower().startswith("utkface"):
         if use_aug and train:
             transform = transforms.Compose([
                 transforms.Resize(256),
